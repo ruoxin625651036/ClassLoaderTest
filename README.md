@@ -10,8 +10,14 @@
         
         通过-Djava.class.path设置classpath路径
         
-3. 运行，修改Main方法中target的绝对路径；然后运行即可。(特别注意，我将A.class和B.class的位置进行调整了，
-  同时将target中的A和B目录删了，主要和classpath有关)       
+3. 由于classpath的问题，后面采用多Module的方式，将不同的内容设置为不同的jar包。 
+
+   运行:  
+      
+      * 在根目录下运行：mvn package  
+      * 替换Main Module中的Main方法的URL路径（**47行**）为childModuleA所生成的jar包路径
+      * 运行Main Module中的Main方法，即可发现类A可加载，类B不能加载 
+         
     
 
  

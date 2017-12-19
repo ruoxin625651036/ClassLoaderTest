@@ -44,13 +44,12 @@ public class Main {
             // 如果添加/,
             // URL路径只能是在package所在的路径的外层？ 如果定位到了package里面的某一层目录，后面在使用loadClass会找不到对应的class文件，yinw
             // class文件的名称由package.类名组成
-            urls[0] = new URL("file:/Users/duanyuejiao/Documents/duanyuejiao/code/study_source/ClassLoaderTest"
-                    + "/target/");
+            urls[0] = new URL("file:/Users/duanyuejiao/Documents/duanyuejiao/code/study_source/ClassLoaderTest/childModuleA/target/childModuleA-1.0-SNAPSHOT.jar");
 
             URLClassLoader cl = new MyClassLoader(urls);
             System.out.println(cl.getResource("A/A.class"));
             Class<?> clazzA = cl.loadClass("A.A");
-            System.out.println(clazzA.getClassLoader().getParent());
+            System.out.println(clazzA.getClassLoader());
             Object a = clazzA.newInstance();
 
             //   不能使用A进行强制转化的愿意在于，A不在main所在的classpath下，所有是无法进行实例话的，这个时候需要使用反射机制进行处理
