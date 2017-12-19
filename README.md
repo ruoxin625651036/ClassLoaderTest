@@ -8,7 +8,9 @@
         
 2. JVM默认是双亲委派模型，所以classpath需要进行单独设置，否则会影响结果。  
         
+        通过-Djava.class.path设置classpath路径
         
+3. 运行，修改Main方法中target的绝对路径；然后运行即可。       
     
 
  
