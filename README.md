@@ -10,7 +10,8 @@
         
         通过-Djava.class.path设置classpath路径
         
-3. 运行，修改Main方法中target的绝对路径；然后运行即可。       
+3. 运行，修改Main方法中target的绝对路径；然后运行即可。(特别注意，我将A.class和B.class的位置进行调整了，
+  同时将target中的A和B目录删了，主要和classpath有关)       
     
 
  
