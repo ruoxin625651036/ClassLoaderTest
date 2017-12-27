@@ -1,6 +1,6 @@
 /**
- * Baifubao.com,Inc.
- * Copyright (c) 2017-2018 All Rights Reserved.
+ *
+ *  All Rights Reserved.
  */
 package test;
 
@@ -23,7 +23,7 @@ import java.net.URLClassLoader;
  *   4. 如果所要实例化的类不在classpath下，那么怎样对它进行实例化呢？ （tomcat中是怎样对Servlet进行加载和处理的？）
  *
  *
- * @author duanyuejiao
+ * @author dyj
  */
 public class Main {
     public static void main(String[] args) {
@@ -44,7 +44,7 @@ public class Main {
             // 如果添加/,
             // URL路径只能是在package所在的路径的外层？ 如果定位到了package里面的某一层目录，后面在使用loadClass会找不到对应的class文件，yinw
             // class文件的名称由package.类名组成
-            urls[0] = new URL("file:/Users/duanyuejiao/Documents/duanyuejiao/code/study_source/ClassLoaderTest/childModuleA/target/childModuleA-1.0-SNAPSHOT.jar");
+            urls[0] = new URL("file:/Users/dyj/Documents/dyj/code/study_source/ClassLoaderTest/childModuleA/target/childModuleA-1.0-SNAPSHOT.jar");
 
             URLClassLoader cl = new MyClassLoader(urls);
             System.out.println(cl.getResource("A/A.class"));
